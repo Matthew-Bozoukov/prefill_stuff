@@ -1,0 +1,98 @@
+{
+  "modelId": "gemma-3-27b-it",
+  "nlaSourceId": "kitft-l41",
+  "prompt": "Continue this sentence naturally.",
+  "prefill": "To build a tree you must",
+  "completion": " first... \n\n...**lay a",
+  "full_text": "<start_of_turn>user\nContinue this sentence naturally.<end_of_turn>\n<start_of_turn>model\nTo build a tree you must<end_of_turn>\n<start_of_turn>model\n first... \n\n...**lay a",
+  "generated_tokens": [
+    {
+      "token": " first",
+      "token_id": 1171,
+      "position": 25,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured FAQ format established: a poetic/reflective answer begins, signaling a metaphorical explanation of trees and growth.\n\nThe opening metaphor \"you cannot build a towering skyscraper without, first\" signals a universal analogy, likely a gardening or building metaphor about trees growing tall.\n\nFinal token \"you must first\" opens a foundational principle or proverb (\"to grow a towering tree, you first\"), strongly expecting a basic, instructional beginning like \"lay a foundation\" or \"dig the roots.\" — a classic metaphor about planting soil. or \"have the ground.\" or \"understand the roots.\" or \"create a foundation.\" or \"plant a seed.\" or \"clear the ground.\" or \"get the soil.\"",
+      "l2_norm": 63760.11328125,
+      "mse": 0.016290709376335144,
+      "cosine_similarity": 0.9918543696403503
+    },
+    {
+      "token": "...",
+      "token_id": 1390,
+      "position": 26,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured answer format: a conversational/reflective response to a poetic question about a growing plant, establishing artistic, contemplative tone.\n\nThe phrase \"It begins with a dream, that begins first...\" signals a concrete example or suggestion, likely a multiple-choice answer or a planted seed metaphor.\n\nFinal token \"first...\" opens a response or example answer (\"First you should...\"), strongly expecting a continuation like \"plant a foundation\" or \"...\" or \"get a feeling for the wind\" or \"choose your next steps\" or \"...plant the roots\" or \"check the wind\" or \"have a long pause\" or \"get a...\" or \"...imagine the shimmering sunlight.\" or.\"",
+      "l2_norm": 39650.40234375,
+      "mse": 0.06281997263431549,
+      "cosine_similarity": 0.9685906767845154
+    },
+    {
+      "token": " ",
+      "token_id": 236743,
+      "position": 27,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured conversational/educational register: a reflective, poetic response analyzing metaphor, establishing a contemplative analogy about patience and growth.\n\nThe opening question \"you can't build a great building without first...\" signals a concrete example or analogy, likely a foundational, long-term process of growing a tree or forest.\n\nFinal token \"you need a tree...\" opens a direct answer or illustrative example (\"to build a great building, you must...\"), requiring a noun phrase like \"seed it,\" \"plant a seed,\" or \"grow a seed\" to answer the analogy. or \"have time.\" or \"first...\" or \"seed, water, and patience.\" or \"choose a tiny acorn.\"",
+      "l2_norm": 32203.55078125,
+      "mse": 0.05955039709806442,
+      "cosine_similarity": 0.9702250957489014
+    },
+    {
+      "token": "\n\n",
+      "token_id": 108,
+      "position": 28,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured answer format established: a conversational AI/advice response promising poetic, reflective completion of a sentence.\n\nThe phrase \"The end is a mystery... and then:\n\n\" signals a list or multiple options for completing a dangling sentence, signaling a brainstorming/choice of continuation.\n\nFinal token \"\n\n\" closes a truncated response (\"My last word is a mystery. I'm happy... \n\n\"), strongly expecting a continuation like a completion option or \"Here are a few options\" or \" (choose one)\" to provide a continuation of the sentence. or \"—\" or \"or...\". or \"Here I'll pick a continuation\" or \"This is a natural pause,.\"",
+      "l2_norm": 53613.890625,
+      "mse": 0.019704537466168404,
+      "cosine_similarity": 0.9901480674743652
+    },
+    {
+      "token": "...",
+      "token_id": 1390,
+      "position": 29,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured FAQ format: a warm, poetic response beginning, establishing a reflective answer to a metaphorical question about trees and dreams.\n\nThe opening question \"Building a dream begins with a vision...you have to...\" signals a concrete, practical analogy about planting trees, likely a foundational gardening metaphor.\n\nFinal token \"...\": opens a concrete example or answer phrase (\"a tree like a grand idea begins......\"), requiring a starting point like \"find your soil\" or \"get your roots down\" or \"understand the soil.\" or \"plant your foundation\" or \"get strong roots.\" or \"imagine the soil first.\" or \"...choose a foundation.\" or \"get your roots deep.\" or \"find.\"",
+      "l2_norm": 49251.10546875,
+      "mse": 0.06920318305492401,
+      "cosine_similarity": 0.9653984308242798
+    },
+    {
+      "token": "**",
+      "token_id": 1018,
+      "position": 30,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured FAQ format established: a reflective, poetic response beginning, signaling a thoughtful answer to a metaphorical question about trees and growth.\n\nThe opening metaphor \"you can't build a towering skyscraper without a strong foundation...you must begin...**\" signals a foundational analogy, likely about trees or planting.\n\nFinal token \"**\" opens a concrete example or analogy (\"a tree grows, you must **\"), immediately requiring a foundational starting point like \"start with roots\" or \"plant the soil\" to answer the metaphor of growing a tree. or \"have a good foundation.\" or \"first dig the ground.\" or \"get your seed.\" or \"imagine the wind.\" or \"choose your.\"",
+      "l2_norm": 54620.1875,
+      "mse": 0.06810355186462402,
+      "cosine_similarity": 0.9659482836723328
+    },
+    {
+      "token": "lay",
+      "token_id": 7800,
+      "position": 31,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured article format: a reflective, poetic piece exploring metaphor, establishing a lesson about trees and growth.\n\nThe opening metaphor \"a towering tree cannot grow without first you must lay\" signals a foundational analogy, likely a metaphor for building a tree or plant, establishing a basic principle of growth or stability.\n\nFinal token \"lay\" opens a concrete metaphor or example (\"you grow a towering tree, you must lay\"), strongly expecting a noun phrase like \"a strong foundation\" or \"the foundation,\" a classic gardening metaphor for roots. or \"the foundations\" or \"your roots.\" or \"a solid foundation.\" or \"the ground.\" or \"the correct base.\" or \"a good foundation.\"",
+      "l2_norm": 62887.93359375,
+      "mse": 0.00981409102678299,
+      "cosine_similarity": 0.9950927495956421
+    },
+    {
+      "token": " a",
+      "token_id": 496,
+      "position": 32,
+      "fragment_index": 0,
+      "fragment_count": 1,
+      "description": "Structured educational/reflective article format: a poetic, metaphorical piece explaining nature metaphors, establishing a lesson or analogy.\n\nThe opening phrase \"A tree grows tall, you must lay a\" signals a metaphorical analogy about trees and growth, establishing a concrete example of building a tree or structure.\n\nFinal token \"lay a\" begins a noun phrase opening a metaphor or analogy (\"You grow a towering tree, you lay a\"), strongly expecting a noun like \"strong foundation\" or \"solid foundation\" — a classic metaphor for roots/roots in trees. or \"strong foundation.\" or \"solid root.\" or \"good foundation.\" or \"strong base.\" or \"suitable root system.\" or \"firm.\"",
+      "l2_norm": 57320.58203125,
+      "mse": 0.012237378396093845,
+      "cosine_similarity": 0.9938810467720032
+    }
+  ]
+}
