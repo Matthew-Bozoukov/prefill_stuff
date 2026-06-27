@@ -14,8 +14,8 @@ import requests
 
 
 BASE_URL = "https://www.neuronpedia.org"
-DEFAULT_MODEL_ID = "gemma-3-27b-it"
-DEFAULT_SOURCE_ID = "kitft-l41"
+DEFAULT_MODEL_ID = "llama3.3-70b-it"
+DEFAULT_SOURCE_ID = "kitft-l53"
 
 
 def parse_args() -> argparse.Namespace:
@@ -115,32 +115,54 @@ def post_json(endpoint: str, payload: dict[str, Any], request_headers: dict[str,
     return body
 
 
+def _skip_message_prefix(tokens: list[dict[str, Any]], start: int) -> int:
+    while start < len(tokens) and tokens[start].get("token") in {
+        "\n",
+        "\n\n",
+        "<|end_header_id|>",
+    }:
+        start += 1
+    return start
+
+
+def _assistant_message_starts(tokens: list[dict[str, Any]]) -> list[int]:
+    starts: list[int] = []
+    for i, token in enumerate(tokens):
+        token_text = token.get("token")
+        if token_text == "model":
+            starts.append(_skip_message_prefix(tokens, i + 1))
+        elif token_text == "assistant":
+            prev_token = tokens[i - 1].get("token") if i > 0 else None
+            if prev_token == "<|start_header_id|>":
+                starts.append(_skip_message_prefix(tokens, i + 1))
+    return starts
+
+
 def generated_tokens(tokens: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Return tokens after the final chat-template model marker."""
+    """Return tokens after the final assistant/model chat-template marker."""
+    assistant_starts = _assistant_message_starts(tokens)
+    if assistant_starts:
+        return tokens[assistant_starts[-1] :]
+
     model_indices = [i for i, token in enumerate(tokens) if token.get("token") == "model"]
     if not model_indices:
-        raise RuntimeError("Could not find a final model marker in returned NLA tokens.")
+        raise RuntimeError("Could not find a final assistant/model marker in returned NLA tokens.")
 
-    start = model_indices[-1] + 1
-    while start < len(tokens) and tokens[start].get("token") in {"\n", "\n\n"}:
-        start += 1
+    start = _skip_message_prefix(tokens, model_indices[-1] + 1)
     return tokens[start:]
 
 
 def assistant_prefill_tokens(tokens: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Return tokens in the first assistant/model message, excluding chat-template markers."""
-    model_indices = [i for i, token in enumerate(tokens) if token.get("token") == "model"]
-    if not model_indices:
-        raise RuntimeError("Could not find a model marker in returned NLA tokens.")
+    assistant_starts = _assistant_message_starts(tokens)
+    if not assistant_starts:
+        raise RuntimeError("Could not find an assistant/model marker in returned NLA tokens.")
 
-    start = model_indices[0] + 1
-    while start < len(tokens) and tokens[start].get("token") in {"\n", "\n\n"}:
-        start += 1
-
+    start = assistant_starts[0]
     end = start
     while end < len(tokens):
         token_text = tokens[end].get("token")
-        if token_text in {"<end_of_turn>", "<start_of_turn>"}:
+        if token_text in {"<end_of_turn>", "<start_of_turn>", "<|eot_id|>", "<|start_header_id|>"}:
             break
         end += 1
 
